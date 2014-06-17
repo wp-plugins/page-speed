@@ -65,6 +65,8 @@ Dont Forget to Copy and Paste The Css that you've been remove in the Css Field i
 
 == Screenshots ==
 
-Soon..
+<img src="/assets/screen-shoot-1.jpg">
+
+Settings page
 
 == Changelog ==
