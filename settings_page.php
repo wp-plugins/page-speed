@@ -25,12 +25,32 @@ function pg_pagespeed_register_mysettings() {
 	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name3' );
 	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name4' );
 	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name5' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name6' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name7' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name8' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name9' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name10' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name11' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name12' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name13' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name14' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_css_name15' );
 	// register js
 	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name1' );
 	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name2' );
 	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name3' );
 	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name4' );
 	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name5' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name6' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name7' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name8' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name9' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name10' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name11' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name12' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name13' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name14' );
+	register_setting( 'ps_pagespeed-settings-group', 'insert_js_name15' );
 	// register in option
 	register_setting( 'ps_pagespeed-settings-group', 'insert_inline_css' );
 	register_setting( 'ps_pagespeed-settings-group', 'insert_inline_js' );
@@ -45,7 +65,7 @@ function ps_pagespeed_settings_page() {
 
 .inline-wrap {
     display: inline-block;
-    margin-right: 50px;
+    margin-right: 10px;
     vertical-align: top;
 }
 
@@ -56,6 +76,13 @@ function ps_pagespeed_settings_page() {
 .gzip-active {
     color: #008000;
     font-weight: bold;
+}
+.col2 {
+display: inline-block;
+vertical-align: top;
+}
+.ps-textarea {
+min-height: 450px;
 }
 </style>
 <div class="wrap">
@@ -71,29 +98,57 @@ function ps_pagespeed_settings_page() {
 		
 	<div class="inline-wrap">
 <p> Insert The Js Name Here </p>
+<div class="col2">
 	<p><input type="text" name="insert_js_name1" value="<?php echo get_option('insert_js_name1'); ?>" /></p>
 	<p><input type="text" name="insert_js_name2" value="<?php echo get_option('insert_js_name2'); ?>" /></p>
 	<p><input type="text" name="insert_js_name3" value="<?php echo get_option('insert_js_name3'); ?>" /></p>
 	<p><input type="text" name="insert_js_name4" value="<?php echo get_option('insert_js_name4'); ?>" /></p>
 	<p><input type="text" name="insert_js_name5" value="<?php echo get_option('insert_js_name5'); ?>" /></p>
+    <p><input type="text" name="insert_js_name6" value="<?php echo get_option('insert_js_name6'); ?>" /></p>
+    <p><input type="text" name="insert_js_name7" value="<?php echo get_option('insert_js_name7'); ?>" /></p>
+    <p><input type="text" name="insert_js_name8" value="<?php echo get_option('insert_js_name8'); ?>" /></p>
+    <p><input type="text" name="insert_js_name9" value="<?php echo get_option('insert_js_name9'); ?>" /></p>
+    <p><input type="text" name="insert_js_name10" value="<?php echo get_option('insert_js_name10'); ?>" /></p>
+    </div>
+    <div class="col2">
+    <p><input type="text" name="insert_js_name11" value="<?php echo get_option('insert_js_name11'); ?>" /></p>
+    <p><input type="text" name="insert_js_name12" value="<?php echo get_option('insert_js_name12'); ?>" /></p>
+    <p><input type="text" name="insert_js_name13" value="<?php echo get_option('insert_js_name13'); ?>" /></p>
+    <p><input type="text" name="insert_js_name14" value="<?php echo get_option('insert_js_name14'); ?>" /></p>
+    <p><input type="text" name="insert_js_name15" value="<?php echo get_option('insert_js_name15'); ?>" /></p>
+    </div>
 	</div>
 	<div class="inline-wrap">
 	<p> Copy and Paste The Js File Here:  </p>
-	<p><textarea rows="4" cols="50" name="insert_inline_js">  <?php  echo get_option('insert_inline_js'); ?> </textarea> </p>
+	<p><textarea class="ps-textarea" rows="4" cols="50" name="insert_inline_js">  <?php  echo get_option('insert_inline_js'); ?> </textarea> </p>
 	</div>
 	<hr>
 	<h3> Optimize CSS Delivery  </h3> 
 	<div class="inline-wrap">
 	<p> Insert The Css File Name Here: </p>
+    <div class="col2">
 	<p><input type="text" name="insert_css_name1" value="<?php echo get_option('insert_css_name1');  ?>" /></p>
 	<p><input type="text" name="insert_css_name2" value="<?php echo get_option('insert_css_name2');  ?>" /></p>
 	<p><input type="text" name="insert_css_name3" value="<?php echo get_option('insert_css_name3');  ?>" /></p>
 	<p><input type="text" name="insert_css_name4" value="<?php echo get_option('insert_css_name4');  ?>" /></p>
 	<p><input type="text" name="insert_css_name5" value="<?php echo get_option('insert_css_name5');  ?>" /></p>
+    <p><input type="text" name="insert_css_name6" value="<?php echo get_option('insert_css_name6');  ?>" /></p>
+    <p><input type="text" name="insert_css_name7" value="<?php echo get_option('insert_css_name7');  ?>" /></p>
+    <p><input type="text" name="insert_css_name8" value="<?php echo get_option('insert_css_name8');  ?>" /></p>
+    <p><input type="text" name="insert_css_name9" value="<?php echo get_option('insert_css_name9');  ?>" /></p>
+    <p><input type="text" name="insert_css_name10" value="<?php echo get_option('insert_css_name10');  ?>" /></p>
+    </div>
+    <div class="col2">
+    <p><input type="text" name="insert_css_name11" value="<?php echo get_option('insert_css_name11');  ?>" /></p>
+    <p><input type="text" name="insert_css_name12" value="<?php echo get_option('insert_css_name12');  ?>" /></p>
+    <p><input type="text" name="insert_css_name13" value="<?php echo get_option('insert_css_name13');  ?>" /></p>
+    <p><input type="text" name="insert_css_name14" value="<?php echo get_option('insert_css_name14');  ?>" /></p>
+    <p><input type="text" name="insert_css_name15" value="<?php echo get_option('insert_css_name15');  ?>" /></p>
+    </div>
 </div>
 <div class="inline-wrap">
 <p> Copy and Paste the Css Here: </p>
-	<p><textarea rows="4" cols="50" name="insert_inline_css">  <?php  echo get_option('insert_inline_css'); ?> </textarea> </p>
+	<p><textarea class="ps-textarea" rows="4" cols="50" name="insert_inline_css">  <?php  echo get_option('insert_inline_css'); ?> </textarea> </p>
 </div>
 
 <hr>

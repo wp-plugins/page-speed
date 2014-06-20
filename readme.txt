@@ -4,7 +4,7 @@ Donate link:
 Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content  
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: GPLv2 or later
 
@@ -48,11 +48,17 @@ cheers...
 
 == Frequently Asked Questions ==
 
-= Where can i find the Script Name of the plugin i want to remove =
+= Where can i find the Script Name  i want to remove =
 
 This Will Help <a target="_blank" href="http://codex.wordpress.org/Function_Reference/wp_enqueue_script#Notes"> Click Me! </a>
 
-I Will Update this plugin as soon as posible for simplier option
+Moving the js to footer is not easy.. 
+
+you need to dig deep to the plugin folder to find what is the js name of the script you want to move in the footer.
+
+once you find the js name you want to move copy paste first all the script to the page speed plugin then put te js name to the "js name field".
+
+dont worry i will update this plugin for more easier option as soon as posible..
 
 = Where can i find the Css Name of the plugin i want to remove =
 
