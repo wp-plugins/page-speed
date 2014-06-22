@@ -4,7 +4,7 @@ Donate link:
 Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content  
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: GPLv2 or later
 

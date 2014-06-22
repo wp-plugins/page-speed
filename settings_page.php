@@ -58,7 +58,22 @@ function pg_pagespeed_register_mysettings() {
 	register_setting( 'ps_pagespeed-settings-group', 'move_all_script_infooter' );
 	register_setting( 'ps_pagespeed-settings-group', 'inline_the_css' );	
 	register_setting( 'ps_pagespeed-settings-group', 'activate_gzip' );		
-}
+
+	// register check box option for js and css
+	
+	  
+	
+	// register check box option for js and css
+	
+	global $wp_scripts, $wp_styles;
+	
+	foreach( $wp_scripts->queue as $ps_scripts ) :  
+	
+	register_setting( 'ps_pagespeed-settings-group', $ps_scripts );
+	
+	 endforeach;
+	
+	}
 function ps_pagespeed_settings_page() {
 ?>
 <style> 
@@ -83,6 +98,9 @@ vertical-align: top;
 }
 .ps-textarea {
 min-height: 450px;
+}
+.js-css-name-wrap {
+color:green;
 }
 </style>
 <div class="wrap">
@@ -153,11 +171,68 @@ min-height: 450px;
 
 <hr>
 
+
 	
 
 	</div>
     <?php submit_button(); ?>
 </form>
+
+
+
+<p> Below is the name of the js and css used in this site, use the path/url to get the script/stylesheet and copy-paste it in the field above. </p>
+
+
+  <h3>JS </h3>
+
+<?php
+  global $wp_scripts, $wp_styles;
+   
+	 foreach( $wp_scripts->done as $ps_scripts ) :  
+	
+?>
+
+<div class="hint-wrapper">
+
+<div class="js-css-name-wrap"> <?php echo $ps_scripts; ?> </div>
+	
+<div class="js-css-path-wrap"> <?php echo $wp_scripts->registered[$ps_scripts ]->src; ?> </div>
+
+</div>
+<?php
+	
+
+		endforeach;
+		
+?> 
+
+<h3> CSS  </h3>
+
+<?php
+	     foreach( $wp_styles->done as $handle ) :
+		 
+		 if ($wp_styles->registered[$handle]->args == 'all') {
+		 
+		 ?>
+         
+         <div class="hint-wrapper">
+
+<div class="js-css-name-wrap"> <?php echo $handle; ?> </div>
+	
+<div class="js-css-path-wrap"> <?php echo $wp_styles->registered[$handle]->src; ?> </div>
+
+</div>
+         <?php
+	}
+	
+	
+    endforeach;
+		
+?>
+
+
+
+
 </div>
 <?php 
 } 
