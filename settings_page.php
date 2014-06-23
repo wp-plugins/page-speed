@@ -59,19 +59,6 @@ function pg_pagespeed_register_mysettings() {
 	register_setting( 'ps_pagespeed-settings-group', 'inline_the_css' );	
 	register_setting( 'ps_pagespeed-settings-group', 'activate_gzip' );		
 
-	// register check box option for js and css
-	
-	  
-	
-	// register check box option for js and css
-	
-	global $wp_scripts, $wp_styles;
-	
-	foreach( $wp_scripts->queue as $ps_scripts ) :  
-	
-	register_setting( 'ps_pagespeed-settings-group', $ps_scripts );
-	
-	 endforeach;
 	
 	}
 function ps_pagespeed_settings_page() {
