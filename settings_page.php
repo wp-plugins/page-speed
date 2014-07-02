@@ -114,10 +114,24 @@ function pg_pagespeed_register_mysettings() {
 
 	register_setting( 'ps_pagespeed-settings-group', 'move_all_script_infooter' );
 
-	register_setting( 'ps_pagespeed-settings-group', 'inline_the_css' );	
+	register_setting( 'ps_pagespeed-settings-group', 'inline_the_css' );
+	
+	// activate gzip	
 
-	register_setting( 'ps_pagespeed-settings-group', 'activate_gzip' );		
+	register_setting( 'ps_pagespeed-settings-group', 'activate_gzip_compression' );	
 
+register_setting( 'ps_pagespeed-settings-group', 'activate_caching' );		
+	
+	
+  for ($xx=0; $xx<=20; $xx++) {
+
+$scriptscount = $xx.'-js';
+
+register_setting( 'ps_pagespeed-settings-group', $scriptscount );
+
+
+   
+}
 
 
 	
@@ -170,7 +184,7 @@ vertical-align: top;
 
 .ps-textarea {
 
-min-height: 450px;
+min-height: 290px;
 
 }
 
@@ -205,7 +219,7 @@ width: 1inherit;
 
 <h1> Page Speed Settings</h1>
 
-<h2> Eliminate render-blocking JavaScript and CSS in above-the-fold content </h2>
+
 
 <form method="post" action="options.php">
 
@@ -213,19 +227,70 @@ width: 1inherit;
 
     <?php do_settings_sections( 'ps_pagespeed-settings-group' ); ?>
 
+
+<h2> Enable compression </h2>
+
+
+<input type="checkbox" name="activate_gzip_compression" value="on" <?php echo get_option('activate_gzip_compression')=='on' ? 'checked="checked"' : '' ?> />
+	Activate Gzip and  Deflate. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details.
+<hr>
+	
+<h2> Leverage browser caching </h2>	
+	
+	<input type="checkbox" name="activate_caching" value="on" <?php echo get_option('activate_caching')=='on' ? 'checked="checked"' : '' ?> />
+	
+	Set Expiry date or a maximum age in the HTTP headers. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details.
+<hr>
+	
+	
+	
+	
+<h2> Eliminate render-blocking JavaScript and CSS in above-the-fold content </h2>
+
+
+
+
+
   <div>
 
 
 
 		<h3> Remove render-blocking JavaScript:  </h3> 
+       <p> This is the list of all the script that has been mark as printed in this site.  </p>
 
-		
+	<?php	
+ global $wp_scripts;
+  foreach( $wp_scripts->done as $script => $ps_scripts) {
 
-		
+  $scriptscount = $script.'-js';
+  
+  if ($ps_scripts == 'jquery') {
+  // do nothing
+  }
+  else {
+ 
 
+  ?>
+  <div class="hint-wrapper">
+
+  <div class="js-css-path-wrap">
+  <span style="color:green;"> <?php  echo $ps_scripts; ?> </span>
+  <?php echo $wp_scripts->registered[$ps_scripts]->src; ?> <br>
+  </div>
+  </div>
+  <?php
+  }
+  
+
+  }
+  ?>
+	
+<p>   Deactive the Javascript by puting the Js Name Below.  Copy the js code and paste it  in the field  to inline the Javascript. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details. </p>
+   
+   
 	<div class="inline-wrap">
 
-<p> Insert The Js Name Here </p>
+<p> Javascript Name </p>
 
 <div class="col2">
 
@@ -245,13 +310,15 @@ width: 1inherit;
 
     <p><input type="text" name="insert_js_name8" value="<?php echo get_option('insert_js_name8'); ?>" /></p>
 
-    <p><input type="text" name="insert_js_name9" value="<?php echo get_option('insert_js_name9'); ?>" /></p>
-
-    <p><input type="text" name="insert_js_name10" value="<?php echo get_option('insert_js_name10'); ?>" /></p>
-
+   
     </div>
 
     <div class="col2">
+	
+	 <p><input type="text" name="insert_js_name9" value="<?php echo get_option('insert_js_name9'); ?>" /></p>
+
+    <p><input type="text" name="insert_js_name10" value="<?php echo get_option('insert_js_name10'); ?>" /></p>
+
 
     <p><input type="text" name="insert_js_name11" value="<?php echo get_option('insert_js_name11'); ?>" /></p>
 
@@ -269,7 +336,7 @@ width: 1inherit;
 
 	<div class="inline-wrap">
 
-	<p> Copy and Paste The Js File Here:  </p>
+	<p> Javascript Code </p>
 
 	<p><textarea class="ps-textarea" rows="4" cols="50" name="insert_inline_js">  <?php  echo get_option('insert_inline_js'); ?> </textarea> </p>
 
@@ -278,10 +345,45 @@ width: 1inherit;
 	<hr>
 
 	<h3> Optimize CSS Delivery  </h3> 
+    
+     <p> This is the list of all the css that has been mark as printed in this site.  </p>
+
+    
+   
+	
+	<?php
+  global $wp_styles;
+  foreach( $wp_styles->queue as $style => $ps_style ) {
+  
+  $stylecount = $style.'-css';
+  
+  if ($wp_styles->registered[$ps_style]->args == 'all') {
+  
+  ?>  
+  <div class="hint-wrapper">
+  
+  <div class="js-css-path-wrap"> 
+  <span style="color:green;">  <?php echo $ps_style; ?>  </span>
+  <?php echo $wp_styles->registered[$ps_style]->src; ?>
+  </div>
+  </div>  
+  <?php
+  }
+  
+  else {
+  // dont include
+  }
+ 
+ }
+  ?>
+  
+  <p>   Deactive the Css by puting the Css Name Below. Copy the Css code and paste it  in the field  to inline the Css. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details. </p>
 
 	<div class="inline-wrap">
 
-	<p> Insert The Css File Name Here: </p>
+	<p> Css Name </p>
+
+
 
     <div class="col2">
 
@@ -301,13 +403,15 @@ width: 1inherit;
 
     <p><input type="text" name="insert_css_name8" value="<?php echo get_option('insert_css_name8');  ?>" /></p>
 
-    <p><input type="text" name="insert_css_name9" value="<?php echo get_option('insert_css_name9');  ?>" /></p>
-
-    <p><input type="text" name="insert_css_name10" value="<?php echo get_option('insert_css_name10');  ?>" /></p>
-
+   
     </div>
 
     <div class="col2">
+	
+	 <p><input type="text" name="insert_css_name9" value="<?php echo get_option('insert_css_name9');  ?>" /></p>
+
+    <p><input type="text" name="insert_css_name10" value="<?php echo get_option('insert_css_name10');  ?>" /></p>
+
 
     <p><input type="text" name="insert_css_name11" value="<?php echo get_option('insert_css_name11');  ?>" /></p>
 
@@ -325,7 +429,7 @@ width: 1inherit;
 
 <div class="inline-wrap">
 
-<p> Copy and Paste the Css Here: </p>
+<p> Css code </p>
 
 	<p><textarea class="ps-textarea" rows="4" cols="50" name="insert_inline_css">  <?php  echo get_option('insert_inline_css'); ?> </textarea> </p>
 
@@ -349,109 +453,6 @@ width: 1inherit;
 
 </form>
 
-
-
-
-
-
-
-<p> Below is the name of the js and css used in this site, use the path/url to get the script/stylesheet and copy-paste it in the field above. </p>
-
-
-
-
-
-  <h3>JS </h3>
-
-
-
-<?php
-
-  global $wp_scripts, $wp_styles;
-
-   
-
-	 foreach( $wp_scripts->done as $ps_scripts ) :  
-
-	
-
-?>
-
-
-
-<div class="hint-wrapper">
-
-
-
-<div class="js-css-name-wrap"> <?php echo $ps_scripts; ?> </div>
-
-	
-
-<div class="js-css-path-wrap"> <?php echo $wp_scripts->registered[$ps_scripts ]->src; ?> </div>
-
-
-
-</div>
-
-<?php
-
-	
-
-
-
-		endforeach;
-
-		
-
-?> 
-
-
-
-<h3> CSS  </h3>
-
-
-
-<?php
-
-	     foreach( $wp_styles->done as $handle ) :
-
-		 
-
-		 if ($wp_styles->registered[$handle]->args == 'all') {
-
-		 
-
-		 ?>
-
-         
-
-         <div class="hint-wrapper">
-
-
-
-<div class="js-css-name-wrap"> <?php echo $handle; ?> </div>
-
-	
-
-<div class="js-css-path-wrap"> <?php echo $wp_styles->registered[$handle]->src; ?> </div>
-
-
-
-</div>
-
-         <?php
-
-	}
-
-	
-
-	
-
-    endforeach;
-
-		
-
-?>
 
 </div>
 

@@ -4,11 +4,12 @@
 
  * Plugin Name: Page Speed
 
- * Plugin URI: http://wordpress.org/extend/plugins/pagespeed/
+ * Plugin URI: https://wordpress.org/plugins/page-speed/
 
- * Description: Page Speed Plugin Allows You To Eliminate render-blocking JavaScript and CSS in above-the-fold content
+ * Page Speed Plugin Allows You To Eliminate render-blocking JavaScript and CSS in above-the-fold content, Enable compression and Leverage browser caching.
 
- * Version: 1.0.11
+
+ * Version: 1.1.0
 
  * Author: Rex Anthony D. Eubanas
 
