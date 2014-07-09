@@ -8,8 +8,7 @@
 
  * Page Speed Plugin Allows You To Eliminate render-blocking JavaScript and CSS, Enable compression and Leverage browser caching.
 
-
- * Version: 1.1.1
+ * Version: 1.1.2
 
  * Author: Rex Anthony D. Eubanas
 

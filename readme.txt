@@ -1,10 +1,10 @@
 	=== Plugin Name ===
 Contributors: buboiasinine
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NAX45XQV5P7ZW
-Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content  
+Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content, Leverage Browsing cache, Enable Compression, Gzip  
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: GPLv2 or later
 
@@ -19,9 +19,9 @@ For More Info Visit <a href="https://developers.google.com/speed/docs/insights/a
 
 Features include: 
 
-   Leverage browser caching
+Leverage browser caching
 	
-	Enable compression
+Enable compression
 
 
 Eliminate render-blocking JavaScript and CSS in above-the-fold content
@@ -93,7 +93,7 @@ Settings page
 
 == Changelog ==
 
-version 1.1.1
+version 1.1.2
 
 fix bugs - white space
 
