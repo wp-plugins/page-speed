@@ -6,10 +6,10 @@
 
  * Plugin URI: https://wordpress.org/plugins/page-speed/
 
- * Page Speed Plugin Allows You To Eliminate render-blocking JavaScript and CSS in above-the-fold content, Enable compression and Leverage browser caching.
+ * Page Speed Plugin Allows You To Eliminate render-blocking JavaScript and CSS, Enable compression and Leverage browser caching.
 
 
- * Version: 1.1.0
+ * Version: 1.1.1
 
  * Author: Rex Anthony D. Eubanas
 

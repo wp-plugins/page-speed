@@ -256,34 +256,7 @@ width: 1inherit;
 
 
 		<h3> Remove render-blocking JavaScript:  </h3> 
-       <p> This is the list of all the script that has been mark as printed in this site.  </p>
-
-	<?php	
- global $wp_scripts;
-  foreach( $wp_scripts->done as $script => $ps_scripts) {
-
-  $scriptscount = $script.'-js';
-  
-  if ($ps_scripts == 'jquery') {
-  // do nothing
-  }
-  else {
- 
-
-  ?>
-  <div class="hint-wrapper">
-
-  <div class="js-css-path-wrap">
-  <span style="color:green;"> <?php  echo $ps_scripts; ?> </span>
-  <?php echo $wp_scripts->registered[$ps_scripts]->src; ?> <br>
-  </div>
-  </div>
-  <?php
-  }
-  
-
-  }
-  ?>
+    
 	
 <p>   Deactive the Javascript by puting the Js Name Below.  Copy the js code and paste it  in the field  to inline the Javascript. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details. </p>
    
@@ -346,37 +319,7 @@ width: 1inherit;
 
 	<h3> Optimize CSS Delivery  </h3> 
     
-     <p> This is the list of all the css that has been mark as printed in this site.  </p>
-
     
-   
-	
-	<?php
-  global $wp_styles;
-  foreach( $wp_styles->queue as $style => $ps_style ) {
-  
-  $stylecount = $style.'-css';
-  
-  if ($wp_styles->registered[$ps_style]->args == 'all') {
-  
-  ?>  
-  <div class="hint-wrapper">
-  
-  <div class="js-css-path-wrap"> 
-  <span style="color:green;">  <?php echo $ps_style; ?>  </span>
-  <?php echo $wp_styles->registered[$ps_style]->src; ?>
-  </div>
-  </div>  
-  <?php
-  }
-  
-  else {
-  // dont include
-  }
- 
- }
-  ?>
-  
   <p>   Deactive the Css by puting the Css Name Below. Copy the Css code and paste it  in the field  to inline the Css. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details. </p>
 
 	<div class="inline-wrap">
