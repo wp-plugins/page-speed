@@ -167,6 +167,125 @@ add_filter('mod_rewrite_rules', 'activate_gzip_cache');
 add_filter('mod_rewrite_rules', 'activate_cache');
 
 
+// add
+
+
+
+
+ 
+	 function ps_pagespeed_settings_style() {
+         wp_register_style( 'ps_page_speed_settings_css', plugin_dir_url( __FILE__ ) . 'css/ps-page-speed-settings-css.css' );
+        wp_enqueue_style( 'ps_page_speed_settings_css' );
+		
+		wp_register_style( 'ps_page_speed_settings_jquery-ui', plugin_dir_url( __FILE__ ) . 'css/jquery-ui.css' );
+        wp_enqueue_style( 'ps_page_speed_settings_jquery-ui' );
+		
+		wp_register_script( 'ps_page_speed_settings_jquery', plugin_dir_url( __FILE__ ). '/js/jquery-1.10.js' );
+		wp_enqueue_script( 'ps_page_speed_settings_jquery' );
+		
+		wp_register_script( 'ps_page_speed_settings_jquery-ui', plugin_dir_url( __FILE__ ) . '/js/jquery-ui.js' );
+		wp_enqueue_script( 'ps_page_speed_settings_jquery-ui' );
+		
+}
+add_action( 'admin_enqueue_scripts', 'ps_pagespeed_settings_style' );
+
+
+	 
+	 
+	 function my_custom_admin_head(){
+?>
+
+
+<script>
+$(function() {
+$( "#accordion" ).accordion();
+});
+</script>
+
+<?php
+
+}
+add_action('admin_head', 'my_custom_admin_head');
+
+function ps_get_css() {
+     
+ global $wp_styles;
+ 
+$style_name_css_list = array();
+ 
+
+ foreach( $wp_styles->queue as $style =>  $ps_styles) {
+
+  $style_url_css = $wp_styles->registered[$ps_styles]->src;
+ $style_name_css_list[$style] = $style_url_css;
+ 
+  $option_name = 'css_name_list';
+  $new_value = $style_name_css_list;
+  
+  
+   if ( get_option( $option_name) !== false ) {
+    // The option already exists, so we just update it.
+    update_option( $option_name, $new_value );
+	
+} else {
+    // The option hasn't been added yet. We'll add it with $autoload set to 'no'.
+    $deprecated = null;
+    $autoload = 'yes';
+	
+    add_option( $option_name, $new_value, $deprecated, $autoload );
+	
+}
+ 
+ }
+ 
+ 
+ }
+ 
+ 
+ add_action('wp_head', 'ps_get_css');
+ 
+ 
+ // save the script
+function ps_get_script() {
+     
+global $wp_scripts;
+
+$script_name_list = array();
+
+ foreach( $wp_scripts->queue as $script => $ps_scripts) {
+ 
+ $script_url  = $wp_scripts->registered[$ps_scripts]->src;
+ $script_name_list[$script] = $script_url;
+ 
+ $option_name = 'script_name_list';
+$new_value = $script_name_list;
+ 
+ if ( get_option( $option_name ) !== false ) {
+
+    // The option already exists, so we just update it.
+    update_option( $option_name, $new_value );
+	
+
+} else {
+
+    // The option hasn't been added yet. We'll add it with $autoload set to 'no'.
+    $deprecated = null;
+    $autoload = 'yes';
+	
+    add_option( $option_name, $new_value, $deprecated, $autoload );
+}
+ 
+ }
+ 
+ 
+ }
+ 
+ 
+  add_action('wp_head', 'ps_get_script');
+ 
+
+
+
 
 
 ?>

@@ -4,11 +4,11 @@
 
  * Plugin Name: Page Speed
 
- * Plugin URI: https://wordpress.org/plugins/page-speed/
+ * Plugin URI: http://pagespeedpro.3space.info/
 
- * Page Speed Plugin Allows You To Eliminate render-blocking JavaScript and CSS, Enable compression and Leverage browser caching.
+ * Description: Page Speed Plugin help you to get a passing grade in Google Page Speed Insight.
 
- * Version: 1.1.2
+ * Version: 1.1.3
 
  * Author: Rex Anthony D. Eubanas
 

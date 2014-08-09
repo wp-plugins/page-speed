@@ -10,6 +10,10 @@ function pg_pagespeed_menu() {
 
 add_menu_page('Page Speed Plugin Settings', 'Page Speed', 'administrator', __FILE__, 'ps_pagespeed_settings_page',plugins_url('/images/page_speed_icon.png', __FILE__));
 
+
+add_submenu_page( __FILE__, 'Page Speed Submenu','Page Speed PRO', 'manage_options',__FILE__.'_pagespeedpro', _pagespeedpro );
+ 
+
 }
 
 //call register settings function
@@ -142,82 +146,13 @@ function ps_pagespeed_settings_page() {
 
 ?>
 
-<style> 
 
-
-
-.inline-wrap {
-
-    display: inline-block;
-
-    margin-right: 10px;
-
-    vertical-align: top;
-
-}
-
-
-
-.gzip-inactive {
-
-    font-weight: bold;
-
-}
-
-
-
-.gzip-active {
-
-    color: #008000;
-
-    font-weight: bold;
-
-}
-
-.col2 {
-
-display: inline-block;
-
-vertical-align: top;
-
-}
-
-.ps-textarea {
-
-min-height: 290px;
-
-}
-
-.js-css-name-wrap {
-
-color:green;
-
-}
-
-.ps-content-wrapper {
-width: 88%;
-float:left;
-}
-
-
-.donation-wrap {
-float: right;
-width: 10%;
-}
-
-
-input[type="image"] {
-width: 100%;
-width: 1inherit;
-}
-
-</style>
 
 <div class="wrap">
 
 <div class="ps-content-wrapper">
 
-<h1> Page Speed Settings</h1>
+<h1> Page Speed Settings </h1>
 
 
 
@@ -401,27 +336,6 @@ width: 1inherit;
 
 
 
-<div class="donation-wrap">
-
-<h2 style="color:red; text-align:center;"> 
-<a target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NAX45XQV5P7ZW">
-DONATION 
-</a>
-</h2>
-
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="NAX45XQV5P7ZW">
-<input type="image" src="https://lh3.googleusercontent.com/-Y9jfoDnO0fw/U7CvsTaPEWI/AAAAAAAAAKs/aIukBvl7TLQ/w426-h554/donation.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-
-<a style="text-align:center;" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NAX45XQV5P7ZW">
- Support Wordpress Developers 
-</a>
-
-</div>
 
 
 
@@ -431,5 +345,184 @@ DONATION
 <?php 
 
 } 
+
+
+
+
+
+// ps pro
+
+
+
+
+function _pagespeedpro() {
+
+
+?>
+
+<div class="wrap">
+
+<div class="ps-content-wrapper">
+
+<div class="donation">
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="T9TSDSNM5XT7E">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+</div>
+
+<h1> Page Speed PRO  version 2.0 </h1>
+
+</div>
+</div>
+
+
+<div id="accordion">
+<h3> Enable compression </h3>
+<div>
+ <p>
+<input type="checkbox" name="" value="on"  />
+	Activate Gzip and  Deflate. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details.
+
+</p>
+</div>
+<h3>   Leverage browser caching </h3>
+<div>
+<p>
+<input type="checkbox" name="" value="on" />
+	
+	Set Expiry date or a maximum age in the HTTP headers. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details.
+</p>
+</div>
+
+<h3> Remove render-blocking JavaScript </h3>
+
+<div>
+
+<p> Select the script you want to move in the footer or Select the script you want to Inline   </p>
+
+<?php
+
+$scripts = get_option('script_name_list');
+
+if ( $scripts !== false ) {
+
+
+foreach ($scripts as $count => $scripts_name) {
+
+?>
+<select name="<?php echo $scripts_name.'_js_option['.$scripts_name.']'; ?>">
+    <option value="default"> default </option>
+     <option value="move to footer"> move to footer </option>
+	  <option value="inline"> inline script </option>
+	</select>
+
+
+<a href="<?php echo $scripts_name; ?>" target="_blank"><?php echo $scripts_name; ?></a>
+<br>
+
+<?php
+}
+
+}
+else {
+?>
+<a style="color:red;" target="_blank" href="<?php echo home_url(); ?>"> Click Me! Refresh your Home Page to get the list of the Js then refresh this page again  </a> 
+	 
+<?php
+}
+
+?>
+
+
+<p> <br> </p>
+	
+</div>
+<h3> Optimize CSS Delivery  </h3>
+
+<div>
+
+<p> Select the CSS you want to Inline and click the url to copy paste the css in field below </p>
+
+  <?php
+	 $styles  = get_option('css_name_list');
+	 
+	 
+	  if ( $styles !== false ) {
+	
+foreach ($styles as $count => $css_name) {
+
+
+
+?>
+
+<input type="checkbox" name="" value="" />
+ 
+ <a target="_blank" href="<?php echo $css_name; ?>"> <?php echo $css_name; ?> </a>
+<br>
+<?php
+
+
+
+
+}
+	  
+	  
+	  }
+	  
+	 else {
+	 
+	 ?>
+	 <a style="color:red;" target="_blank" href="<?php echo home_url(); ?>"> Click Me!   Refresh your Home Page to get the list of the Css then refresh this page again  </a> 
+	 
+	 <?php
+
+}
+
+?>
+
+<p> Css code </p>
+
+	<p><textarea class="ps-textarea" rows="4" cols="50" name="insert_inline_css">  <?php  echo get_option('insert_inline_css'); ?> </textarea> </p>
+
+
+
+
+
+
+</div>
+</div>
+
+<hr>
+
+<a id="purchase-button" href="http://pagespeedpro.3space.info/" target="_blank"> Page Speed PRO v. 2.0 </a>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<?php
+
+
+
+
+
+
+}
 
 ?>
