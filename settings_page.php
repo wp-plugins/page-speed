@@ -11,8 +11,9 @@ function pg_pagespeed_menu() {
 add_menu_page('Page Speed Plugin Settings', 'Page Speed', 'administrator', __FILE__, 'ps_pagespeed_settings_page',plugins_url('/images/page_speed_icon.png', __FILE__));
 
 
-add_submenu_page( __FILE__, 'Page Speed Submenu','Page Speed PRO', 'manage_options',__FILE__.'_pagespeedpro', _pagespeedpro );
+$page_hook_suffix = add_submenu_page( __FILE__, 'Page Speed Submenu','Page Speed PRO', 'manage_options',__FILE__.'_pagespeedpro', _pagespeedpro );
  
+add_action('admin_print_scripts-' . $page_hook_suffix, 'ps_pagespeed_settings_style');
 
 }
 
@@ -20,15 +21,9 @@ add_submenu_page( __FILE__, 'Page Speed Submenu','Page Speed PRO', 'manage_optio
 
 add_action( 'admin_init', 'pg_pagespeed_register_mysettings' );
 
-
-
 add_action( 'wp_print_styles', 'pg_pagespeed_dequeue_my_css', 100 );
 
-
-
 add_action( 'wp_print_scripts', 'pg_pagespeed_dequeue_my_js', 100 );
-
-
 
 // inline css 
 
@@ -145,7 +140,16 @@ register_setting( 'ps_pagespeed-settings-group', $scriptscount );
 function ps_pagespeed_settings_page() {
 
 ?>
+<style type="text/css">
 
+.inline-wrap{display:inline-block;margin-right:10px;vertical-align:top}.gzip-inactive{font-weight:700}.gzip-active{color:green;font-weight:700}.col2{display:inline-block;vertical-align:top}.ps-textarea{min-height:100px;width:100%}.js-css-name-wrap{color:green}.wp-admin select{height:auto;padding:0}.ui-accordion-content.ui-helper-reset.ui-widget-content.ui-corner-bottom{height:auto!important}.ui-accordion-header.ui-state-default.ui-accordion-icons.ui-accordion-header-active.ui-state-active.ui-corner-top{background:none repeat scroll 0 0 #f6f6f6;border-bottom:0 none}.ui-accordion-content.ui-helper-reset.ui-widget-content.ui-corner-bottom.ui-accordion-content-active{background:none repeat scroll 0 0 #f6f6f6;padding:0 15px}.ui-widget-content a{text-decoration:none}.ps-content-wrapper h1{display:inline-block}.donation{float:right}
+
+
+.no-margin {
+    margin-top: -10px;
+}
+
+</style>
 
 
 <div class="wrap">
@@ -373,7 +377,7 @@ function _pagespeedpro() {
 </form>
 </div>
 
-<h1> Page Speed PRO  version 2.0 </h1>
+<h1> Page Speed PRO  version 2.1 </h1>
 
 </div>
 </div>
@@ -405,7 +409,7 @@ function _pagespeedpro() {
 
 <?php
 
-$scripts = get_option('script_name_list');
+$scripts = get_option('ps_free_script_name_list');
 
 if ( $scripts !== false ) {
 
@@ -413,7 +417,7 @@ if ( $scripts !== false ) {
 foreach ($scripts as $count => $scripts_name) {
 
 ?>
-<select name="<?php echo $scripts_name.'_js_option['.$scripts_name.']'; ?>">
+<select name="">
     <option value="default"> default </option>
      <option value="move to footer"> move to footer </option>
 	  <option value="inline"> inline script </option>
@@ -447,7 +451,7 @@ else {
 <p> Select the CSS you want to Inline and click the url to copy paste the css in field below </p>
 
   <?php
-	 $styles  = get_option('css_name_list');
+	 $styles  = get_option('ps_free_css_name_list');
 	 
 	 
 	  if ( $styles !== false ) {
@@ -497,7 +501,7 @@ foreach ($styles as $count => $css_name) {
 
 <hr>
 
-<a id="purchase-button" href="http://pagespeedpro.3space.info/" target="_blank"> Page Speed PRO v. 2.0 </a>
+<a id="purchase-button" href="http://pagespeedpro.3space.info/" target="_blank"> Page Speed PRO v. 2.1 </a>
 
 
 

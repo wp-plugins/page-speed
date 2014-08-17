@@ -187,7 +187,7 @@ add_filter('mod_rewrite_rules', 'activate_cache');
 		wp_enqueue_script( 'ps_page_speed_settings_jquery-ui' );
 		
 }
-add_action( 'admin_enqueue_scripts', 'ps_pagespeed_settings_style' );
+
 
 
 	 
@@ -219,7 +219,7 @@ $style_name_css_list = array();
   $style_url_css = $wp_styles->registered[$ps_styles]->src;
  $style_name_css_list[$style] = $style_url_css;
  
-  $option_name = 'css_name_list';
+  $option_name = 'ps_free_css_name_list';
   $new_value = $style_name_css_list;
   
   
@@ -257,7 +257,7 @@ $script_name_list = array();
  $script_url  = $wp_scripts->registered[$ps_scripts]->src;
  $script_name_list[$script] = $script_url;
  
- $option_name = 'script_name_list';
+ $option_name = 'ps_free_script_name_list';
 $new_value = $script_name_list;
  
  if ( get_option( $option_name ) !== false ) {

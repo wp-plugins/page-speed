@@ -4,11 +4,11 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content, Leverage Browsing cache, Enable Compression, Gzip  
 Requires at least: 3.0
 Tested up to: 3.9
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: GPLv2 or later
 
-Page Speed Plugin help you to get a passing grade in Google Page Speed Insight.
+Fast and optimized pages lead to higher visitor engagement, retention, and conversions.
 
 == Description ==
 
@@ -37,6 +37,12 @@ Future Development:
 
 
 == Installation ==
+
+
+1. go to wp admin - plugin - add new
+2. upload zip file or search page speed
+3. install and activate
+
 
 
 
@@ -84,10 +90,17 @@ Dont Forget to Copy and Paste The Css that you've been remove in the Css Field i
 
 <img src="/assets/screenshot-2.png">
 
+<img src="/assets/screenshot-3.png">
+
 
 Settings page
 
 == Changelog ==
+
+version 1.1.5
+
+fix bugs
+
 
 version 1.1.3
 
