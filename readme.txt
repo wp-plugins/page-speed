@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content, Leverage Browsing cache, Enable Compression, Gzip  
 Requires at least: 3.0
 Tested up to: 4.0
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: GPLv2 or later
 
@@ -12,9 +12,10 @@ Fast and optimized pages lead to higher visitor engagement, retention, and conve
 
 == Description ==
 
-Fast and optimized pages lead to higher visitor engagement, retention, and conversions.The Page Speed Plugin help you to get a passing grade in Google Page Speed Insight.  
+Fast and optimized pages lead to higher visitor engagement, retention, and conversions.
+The Page Speed Plugin help you to get a passing grade in Google Page Speed Insight.  
 
-For More Info Visit <a href="https://developers.google.com/speed/docs/insights/about" target="_blank"> Google PageSpeed Insights </a>
+For More Info Visit <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank"> Google PageSpeed Insights </a>
 
 
 Features include: 
@@ -34,21 +35,15 @@ Future Development:
 * Optimize images
 
 
+Go Pro <a target="_blank" href="http://pagespeedpro.3space.info/"> Page Speed PRO </a>
+
 
 
 == Installation ==
 
-
-1. go to wp admin - plugin - add new
-2. upload zip file or search page speed
-3. install and activate
-
-
-
-
-1. Upload `Page Speed` to the `/wp-content/plugins/` directory
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Configure the plugin in 'Admin' 'Page Speed' 
+1. Go to wp admin - plugin - add new
+2. Upload zip file or search page speed
+3. Install and activate
 
 == Frequently Asked Questions ==
 
@@ -88,25 +83,30 @@ Dont Forget to Copy and Paste The Css that you've been remove in the Css Field i
 
 == Screenshots ==
 
-1. settingpage
+1. screenshotone
+2. screenshottwo
+
 
 Settings page
 
 == Changelog ==
 
-version 1.1.5
+= 1.1.6 =
 
-fix bugs
+*comtiple to wordpress 4.0
 
+= 1.1.5 =
 
-version 1.1.3
+*fix bugs
 
-Page Speed PRO
+= 1.1.3 =
 
-including the list of the script and ability to select which script you want to move in the footer or which script you want to inline
+*Page Speed PRO
 
-including the list of css and ability to select which css you want to inline
+*including the list of the script and ability to select which script you want to move in the footer or which script you want to inline
 
-version 1.1.2
+*including the list of css and ability to select which css you want to inline
 
-fix bugs - white space
+= 1.1.2 =
+
+*fix bugs - white space

@@ -366,9 +366,31 @@ function _pagespeedpro() {
 
 <div class="wrap">
 
-<div class="ps-content-wrapper">
+<div class="psp-header-wrapper">
 
-<div class="donation">
+<div class="psp-header">
+
+<h1> Page Speed PRO </h1>
+
+<p>
+Test your website speed performance in speed testing services such as 
+<a rel="nofollow" href="http://gtmetrix.com/">GTmetrix</a>
+,
+<a rel="nofollow" href="http://developers.google.com/speed/pagespeed/insights/">Google PageSpeed</a>
+,
+<a rel="nofollow" href="http://tools.pingdom.com/fpt/">Pingdom</a>
+,
+<a rel="nofollow" href="http://www.webpagetest.org/">Webpagetest</a>
+,
+<a rel="nofollow" href="https://developer.yahoo.com/yslow/">YSlow</a>.<br>
+For Frequenly Ask Question and Tips for Web performance Best Practice. See <a target="_blank"  href="http://pagespeedpro.3space.info/faq/"> FAQ / Tips </a> for more Details.
+</p>
+
+
+</div>
+
+
+<div class="right-panel">
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="T9TSDSNM5XT7E">
@@ -377,9 +399,11 @@ function _pagespeedpro() {
 </form>
 </div>
 
-<h1> Page Speed PRO  version 2.1 </h1>
-
 </div>
+
+
+
+
 </div>
 
 
@@ -388,7 +412,9 @@ function _pagespeedpro() {
 <div>
  <p>
 <input type="checkbox" name="" value="on"  />
-	Activate Gzip and  Deflate. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details.
+	Activate Gzip and Deflate. Compressing resources with gzip or deflate can reduce the number of bytes sent over the network.
+	
+	See <a class="red" href="http://pagespeedpro.3space.info/faq/" target="_blank"> FAQ </a> for more details.
 
 </p>
 </div>
@@ -396,16 +422,23 @@ function _pagespeedpro() {
 <div>
 <p>
 <input type="checkbox" name="" value="on" />
+	Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network.	
+	See <a class="red"  href="http://pagespeedpro.3space.info/faq/" target="_blank"> FAQ </a> for more details.
+
 	
-	Set Expiry date or a maximum age in the HTTP headers. See <a href="https://wordpress.org/plugins/page-speed/faq/" target="_blank"> FAQ </a> for more details.
-</p>
+	</p>
 </div>
 
-<h3> Remove render-blocking JavaScript </h3>
+<h3> Eliminate render-blocking JavaScript and CSS in above-the-fold content  </h3>
 
 <div>
 
-<p> Select the script you want to move in the footer or Select the script you want to Inline   </p>
+
+<h4> Remove render-blocking JavaScript </h4>
+
+
+<p> Select The Script that mark as Remove render-blocking JavaScript in google Insight. See <a class="red" href="http://pagespeedpro.3space.info/faq/" target="_blank"> FAQ </a> for more details.  </p>
+
 
 <?php
 
@@ -417,11 +450,9 @@ if ( $scripts !== false ) {
 foreach ($scripts as $count => $scripts_name) {
 
 ?>
-<select name="">
-    <option value="default"> default </option>
-     <option value="move to footer"> move to footer </option>
-	  <option value="inline"> inline script </option>
-	</select>
+ 
+ <input type="checkbox" name="" value="" />
+ 
 
 
 <a href="<?php echo $scripts_name; ?>" target="_blank"><?php echo $scripts_name; ?></a>
@@ -438,19 +469,18 @@ else {
 <?php
 }
 
+
+
+
 ?>
 
+<h4> Optimize CSS Delivery </h4>
 
-<p> <br> </p>
-	
-</div>
-<h3> Optimize CSS Delivery  </h3>
+<p> Select the css you want to inline. <span style="color:red;">note: </span> Don't inline large data URIs as Google Insight Recomended. See <a class="red" href="http://pagespeedpro.3space.info/faq/" target="_blank"> FAQ </a> for more details.   </p>
 
-<div>
 
-<p> Select the CSS you want to Inline and click the url to copy paste the css in field below </p>
 
-  <?php
+ <?php
 	 $styles  = get_option('ps_free_css_name_list');
 	 
 	 
@@ -486,28 +516,75 @@ foreach ($styles as $count => $css_name) {
 }
 
 ?>
+ 
 
-<p> Css code </p>
+<p> <br> </p>
+
+
+	
+</div>
+
+<h3> Minify JavaScript   </h3>
+
+<div>
+
+<p>
+ Select JavaScripts  that mark as Minify JavaScript in Google Insight. <span style="color:red;">note: </span> Don't forget to copy and paste the code that you selected in the field. 
+ See <a class="red" href="http://pagespeedpro.3space.info/faq/" target="_blank"> FAQ </a> for more details.  
+ </p>
+ 
+ 
+ 
+<?php
+
+$scripts = get_option('ps_free_script_name_list');
+
+if ( $scripts !== false ) {
+
+
+foreach ($scripts as $count => $scripts_name) {
+
+?>
+ 
+ <input type="checkbox" name="" value="" />
+ 
+
+
+<a href="<?php echo $scripts_name; ?>" target="_blank"><?php echo $scripts_name; ?></a>
+<br>
+
+<?php
+}
+
+}
+else {
+?>
+<a style="color:red;" target="_blank" href="<?php echo home_url(); ?>"> Click Me! Refresh your Home Page to get the list of the Js then refresh this page again  </a> 
+	 
+<?php
+}
+
+
+
+
+?>
+
+
+<p> JavaScript Code </p>
 
 	<p><textarea class="ps-textarea" rows="4" cols="50" name="insert_inline_css">  <?php  echo get_option('insert_inline_css'); ?> </textarea> </p>
 
-
-
-
-
-
 </div>
+
+
+
+
+
 </div>
 
 <hr>
 
-<a id="purchase-button" href="http://pagespeedpro.3space.info/" target="_blank"> Page Speed PRO v. 2.1 </a>
-
-
-
-
-
-</div>
+<a id="purchase-button" href="http://pagespeedpro.3space.info/" target="_blank"> Page Speed PRO  </a>
 
 
 
@@ -517,6 +594,9 @@ foreach ($styles as $count => $css_name) {
 
 
 </div>
+
+
+
 
 
 
