@@ -8,7 +8,7 @@
 
  * Description: Page Speed Plugin help you to get a passing grade in Google Page Speed Insight.
 
- * Version: 1.1.8
+ * Version: 1.1.9
 
  * Author: Rex Anthony D. Eubanas
 

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content, Leverage Browsing cache, Enable Compression, Gzip  
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: GPLv2 or later
 
