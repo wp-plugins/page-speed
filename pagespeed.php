@@ -4,11 +4,11 @@
 
  * Plugin Name: Page Speed
 
- * Plugin URI: http://pagespeedpro.3space.info/
+ * Plugin URI: http://pagespeedpro.x20.asia/
 
  * Description: Page Speed Plugin help you to get a passing grade in Google Page Speed Insight.
 
- * Version: 1.1.9
+ * Version: 1.2.0
 
  * Author: Rex Anthony D. Eubanas
 

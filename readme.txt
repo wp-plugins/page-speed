@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content, Leverage Browsing cache, Enable Compression, Gzip  
 Requires at least: 3.0
 Tested up to: 4.1
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: GPLv2 or later
 
@@ -25,17 +25,18 @@ Features include:
 * Eliminate render-blocking JavaScript and CSS in above-the-fold content
 *   Remove render-blocking JavaScript
 *  Optimize CSS Delivery 
+*  Minify JavaScript
+* Minify CSS
 
 
 
 Future Development: 
 
-*  Minify JavaScript
-* Minify CSS
+
 * Optimize images
 
 
-Go Pro <a target="_blank" href="http://pagespeedpro.3space.info/"> Page Speed PRO </a>
+New Website - <a target="_blank" href="http://pagespeedpro.x20.asia/"> Page Speed PRO </a>
 
 
 
@@ -45,7 +46,7 @@ Go Pro <a target="_blank" href="http://pagespeedpro.3space.info/"> Page Speed PR
 2. Upload zip file or search page speed
 3. Install and activate
 
-== Frequently Asked Questions ==
+= Frequently Asked Questions =
 
 = Why are the list for the Css and Script are empty=
 
@@ -90,6 +91,11 @@ Dont Forget to Copy and Paste The Css that you've been remove in the Css Field i
 Settings page
 
 == Changelog ==
+
+= 1.2.0 =
+
+fix bugs
+update PRO website
 
 = 1.1.6 =
 
