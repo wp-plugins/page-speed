@@ -4,11 +4,11 @@
 
  * Plugin Name: Page Speed
 
- * Plugin URI: http://pagespeedpro.x20.asia/
+ * Plugin URI: http://pagespeedpro.byethost31.com/
 
  * Description: Page Speed Plugin help you to get a passing grade in Google Page Speed Insight.
 
- * Version: 1.2.0
+ * Version: 1.2.1
 
  * Author: Rex Anthony D. Eubanas
 

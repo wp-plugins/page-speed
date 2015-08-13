@@ -383,7 +383,7 @@ Test your website speed performance in speed testing services such as
 <a rel="nofollow" href="http://www.webpagetest.org/">Webpagetest</a>
 ,
 <a rel="nofollow" href="https://developer.yahoo.com/yslow/">YSlow</a>.<br>
-For Frequenly Ask Question and Tips for Web performance Best Practice. See <a target="_blank"  href="http://pagespeedpro.x20.asia/faq/"> FAQ / Tips </a> for more Details.
+For Frequenly Ask Question and Tips for Web performance Best Practice. See <a target="_blank"  href="http://pagespeedpro.byethost31.com/faq/"> FAQ / Tips </a> for more Details.
 </p>
 
 
@@ -414,7 +414,7 @@ For Frequenly Ask Question and Tips for Web performance Best Practice. See <a ta
 <input type="checkbox" name="" value="on"  />
 	Activate Gzip and Deflate. Compressing resources with gzip or deflate can reduce the number of bytes sent over the network.
 	
-	See <a class="red" href="http://pagespeedpro.x20.asia/faq/" target="_blank"> FAQ </a> for more details.
+	See <a class="red" href="http://pagespeedpro.byethost31.com/faq/" target="_blank"> FAQ </a> for more details.
 
 </p>
 </div>
@@ -423,7 +423,7 @@ For Frequenly Ask Question and Tips for Web performance Best Practice. See <a ta
 <p>
 <input type="checkbox" name="" value="on" />
 	Setting an expiry date or a maximum age in the HTTP headers for static resources instructs the browser to load previously downloaded resources from local disk rather than over the network.	
-	See <a class="red"  href="http://pagespeedpro.x20.asia/faq/" target="_blank"> FAQ </a> for more details.
+	See <a class="red"  href="http://pagespeedpro.byethost31.com/faq/" target="_blank"> FAQ </a> for more details.
 
 	
 	</p>
@@ -437,7 +437,7 @@ For Frequenly Ask Question and Tips for Web performance Best Practice. See <a ta
 <h4> Remove render-blocking JavaScript </h4>
 
 
-<p> Select The Script that mark as Remove render-blocking JavaScript in google Insight. See <a class="red" href="http://pagespeedpro.x20.asia/faq/" target="_blank"> FAQ </a> for more details.  </p>
+<p> Select The Script that mark as Remove render-blocking JavaScript in google Insight. See <a class="red" href="http://pagespeedpro.byethost31.com/faq/" target="_blank"> FAQ </a> for more details.  </p>
 
 
 <?php
@@ -476,7 +476,7 @@ else {
 
 <h4> Optimize CSS Delivery </h4>
 
-<p> Select the css you want to inline. <span style="color:red;">note: </span> Don't inline large data URIs as Google Insight Recomended. See <a class="red" href="http://pagespeedpro.x20.asia/faq/" target="_blank"> FAQ </a> for more details.   </p>
+<p> Select the css you want to inline. <span style="color:red;">note: </span> Don't inline large data URIs as Google Insight Recomended. See <a class="red" href="http://pagespeedpro.byethost31.com/faq/" target="_blank"> FAQ </a> for more details.   </p>
 
 
 
@@ -530,7 +530,7 @@ foreach ($styles as $count => $css_name) {
 
 <p>
  Select JavaScripts  that mark as Minify JavaScript in Google Insight. <span style="color:red;">note: </span> Don't forget to copy and paste the code that you selected in the field. 
- See <a class="red" href="http://pagespeedpro.x20.asia/faq/" target="_blank"> FAQ </a> for more details.  
+ See <a class="red" href="http://pagespeedpro.byethost31.com/faq/" target="_blank"> FAQ </a> for more details.  
  </p>
  
  
@@ -584,7 +584,7 @@ else {
 
 <hr>
 
-<a id="purchase-button" href="http://pagespeedpro.x20.asia/" target="_blank"> Page Speed PRO  </a>
+<a id="purchase-button" href="http://pagespeedpro.byethost31.com/" target="_blank"> Page Speed PRO  </a>
 
 
 

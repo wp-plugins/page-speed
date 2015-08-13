@@ -3,8 +3,8 @@ Contributors: buboiasinine
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=NAX45XQV5P7ZW
 Tags: Page Speed, Goole Page Speed Insights, PageSpeed Insights, Css, Js, Javascript, Optimize Css, Remove render-blocking JavaScript, Move Script In Footer, Eliminate render-blocking JavaScript and CSS in above-the-fold content, Leverage Browsing cache, Enable Compression, Gzip  
 Requires at least: 3.0
-Tested up to: 4.1
-Stable tag: 1.2.0
+Tested up to: 4.2
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: GPLv2 or later
 
@@ -36,7 +36,7 @@ Future Development:
 * Optimize images
 
 
-New Website - <a target="_blank" href="http://pagespeedpro.x20.asia/"> Page Speed PRO </a>
+New Website - <a target="_blank" href="http://pagespeedpro.byethost31.com/"> Page Speed PRO </a>
 
 
 
@@ -91,6 +91,11 @@ Dont Forget to Copy and Paste The Css that you've been remove in the Css Field i
 Settings page
 
 == Changelog ==
+
+= 1.2.0 =
+*compatible to wp 4.2
+*update pro site
+
 
 = 1.2.0 =
 
